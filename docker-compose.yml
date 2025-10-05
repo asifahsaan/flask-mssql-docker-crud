@@ -5,7 +5,7 @@ services:
     build: .
     container_name: flask-mssql-demo
     ports:
-      - "5000:5000"
+      - "4000:5000"
     env_file:
       - .env
     restart: always

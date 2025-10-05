@@ -5,11 +5,11 @@ app = Flask(__name__)
 app.secret_key = "supersecretkey"  # TODO: move to .env for production
 
 # Connection details
-server = "192.168.100.22"       # or host.docker.internal if inside Docker
+server = "192.168.0.102" #192.168.100.22       # or host.docker.internal if inside Docker
 database = "test"
 username = "flask_user"
 password = "123"
-driver = "{ODBC Driver 18 for SQL Server}"  # use 17 if 18 not installed
+driver = "{ODBC Driver 17 for SQL Server}"  # use 17 if 18 not installed
 
 connection_string = (
     f"DRIVER={driver};"

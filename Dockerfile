@@ -17,7 +17,7 @@ RUN curl -fsSL https://packages.microsoft.com/keys/microsoft.asc \
  && echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft.gpg] https://packages.microsoft.com/debian/11/prod bullseye main" \
       > /etc/apt/sources.list.d/mssql-release.list \
  && apt-get update \
- && ACCEPT_EULA=Y apt-get install -y msodbcsql18 \
+ && ACCEPT_EULA=Y apt-get install -y msodbcsql17 \
  && rm -rf /var/lib/apt/lists/*
 
 # App
@@ -27,7 +27,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Default envs (override at run time if you want)
-ENV ODBC_DRIVER="ODBC Driver 18 for SQL Server"
+ENV ODBC_DRIVER="ODBC Driver 17 for SQL Server"
 ENV DB_SERVER="host.docker.internal"
 ENV DB_PORT="1433"
 ENV DB_NAME="test"
